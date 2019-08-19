@@ -1,0 +1,13 @@
+{
+    "name": "sass_base",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+      "parcel": "^1.12.3",
+      "sass": "^1.22.9"
+    },
+    "scripts": {
+      "dev": "parcel ./index.html"
+    }
+  }
