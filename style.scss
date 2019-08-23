@@ -1,13 +1,27 @@
+@font-face {
+  font-family: "Lato";
+  src: url('font/Lato-Thin.woff') format(“woff”);
+}
+
+
+
 $main-color: #000000;
 $sub-color: #ffffff;
 $shadow: 0px 0px 10px #000000;
 
-* {
-  font-family: "Lato", sans-serif;
+@mixin background-color {
+  background-color: rgba(0, 0, 0, 0.26);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: " ";
 }
 
 body {
   margin: 0;
+  font-family: "Lato", sans-serif;
 }
 
 // header
@@ -27,12 +41,13 @@ header {
   span {
     display: inline-block;
     color: $sub-color;
+    font-family: Lato;
     font-size: 64px;
-    font-weight: 100;
+    font-style: normal;
+    font-weight: 200;
     line-height: 77px;
     letter-spacing: 0;
     text-shadow: $shadow;
-    font-style: normal;
     top: 200px;
     left: 0;
     right: 0;
@@ -42,14 +57,7 @@ header {
   }
 
   &::before {
-    background-color: rgba(0, 0, 0, 0.26);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: " ";
-    z-index: 0;
+    @include background-color;
   }
 }
 
@@ -62,7 +70,9 @@ header {
 
   ul {
     font-size: 14px;
-    padding: 0 200px;
+    font-style: light;
+    font-weight: 300;
+    padding: 0 14%;
     display: flex;
     list-style: none;
     align-items: center;
@@ -74,6 +84,8 @@ header {
 
     li:first-child {
       font-size: 18px;
+      font-style: regular;
+      font-weight: normal;
       margin-right: auto;
     }
 
@@ -92,7 +104,6 @@ header {
     bottom: 0;
     left: 0;
     content: " ";
-    z-index: 999;
   }
 }
 
@@ -111,12 +122,36 @@ header {
     background-color: $sub-color;
     opacity: 0.8;
     margin: 0 4px;
-
-    &--selected {
-      border: 1px solid $main-color;
-    }
   }
 }
+
+.slide-button__circle—-selected {
+  border: 1px solid $main-color;
+}
+
+// 本当は以下のようにやりたかった
+// .slide-button {
+//   position: absolute;
+//   bottom: 24px;
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+
+//   &__circle {
+//     display: inline-block;
+//     width: 8px;
+//     height: 8px;
+//     border-radius: 50%;
+//     background-color: $sub-color;
+//     opacity: 0.8;
+//     margin: 0 4px;
+
+//     // ここ何故か効いてない
+//     &--selected {
+//       border: 1px solid $main-color;
+//     }
+//   }
+// }
 
 // news-image
 .news {
@@ -132,16 +167,9 @@ header {
       width: 500px;
       height: 120px;
       margin-right: 17px;
-    
+
       &::before {
-        background-color: rgba(0, 0, 0, 0.26);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        content: " ";
-        z-index: 0;
+        @include background-color;
       }
     }
 
@@ -155,7 +183,7 @@ header {
       left: 41%;
       color: $sub-color;
       font-size: 32px;
-      font-style: normal;
+      font-style: light;
       font-weight: 300;
       text-shadow: $shadow;
     }
@@ -178,6 +206,9 @@ header {
     li {
       font-family: Noto Sans JP;
       font-size: 14px;
+      font-style: regular;
+      font-weight: normal;
+      color: rgba(0, 0, 0, 0.87);
       line-height: 20px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -190,7 +221,6 @@ header {
   }
 }
 
-
 // archives
 .archives {
   margin: 0;
@@ -198,14 +228,17 @@ header {
   .archives-title {
     text-align: center;
     font-size: 32px;
+    font-style: semibold;
+    font-weight: 600;
     margin-bottom: 50px;
   }
 
   .archives-contents {
     text-align: center;
-    padding: 0 100px;
+    padding: 0 7%;
 
     .contents-container {
+      text-align: left;
       position: relative;
       width: 238px;
       display: inline-block;
@@ -226,13 +259,17 @@ header {
 
       .description {
         font-size: 14px;
-        font-weight: 700px;
+        font-style: semibold;
+        font-weight: 600;
         margin: 0 0 8px;
+        color: rgba(0, 0, 0, 0.87);
       }
 
       .date {
         text-align: right;
         font-size: 10px;
+        font-style: Regular;
+        font-weight: normal;
         color: rgba(0, 0, 0, 0.54);
         margin: 0 0 24px;
       }
@@ -253,5 +290,19 @@ header {
     p {
       margin: 14px auto;
     }
+  }
+}
+
+@media (max-width: 320px) {
+  // news-image
+  .news-image {
+    width: 100vw;
+    float: none;
+  }
+
+  // news-topics
+  .news-topics {
+    width: 50vw;
+    float: none;
   }
 }
