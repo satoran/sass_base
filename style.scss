@@ -1,10 +1,3 @@
-@font-face {
-  font-family: "Lato";
-  src: url('font/Lato-Thin.woff') format(“woff”);
-}
-
-
-
 $main-color: #000000;
 $sub-color: #ffffff;
 $shadow: 0px 0px 10px #000000;
@@ -43,8 +36,7 @@ header {
     color: $sub-color;
     font-family: Lato;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 200;
+    font-weight: 100;
     line-height: 77px;
     letter-spacing: 0;
     text-shadow: $shadow;
@@ -84,7 +76,6 @@ header {
 
     li:first-child {
       font-size: 18px;
-      font-style: regular;
       font-weight: normal;
       margin-right: auto;
     }
@@ -183,7 +174,6 @@ header {
       left: 41%;
       color: $sub-color;
       font-size: 32px;
-      font-style: light;
       font-weight: 300;
       text-shadow: $shadow;
     }
@@ -206,7 +196,6 @@ header {
     li {
       font-family: Noto Sans JP;
       font-size: 14px;
-      font-style: regular;
       font-weight: normal;
       color: rgba(0, 0, 0, 0.87);
       line-height: 20px;
@@ -228,7 +217,6 @@ header {
   .archives-title {
     text-align: center;
     font-size: 32px;
-    font-style: semibold;
     font-weight: 600;
     margin-bottom: 50px;
   }
@@ -259,7 +247,6 @@ header {
 
       .description {
         font-size: 14px;
-        font-style: semibold;
         font-weight: 600;
         margin: 0 0 8px;
         color: rgba(0, 0, 0, 0.87);
@@ -268,7 +255,6 @@ header {
       .date {
         text-align: right;
         font-size: 10px;
-        font-style: Regular;
         font-weight: normal;
         color: rgba(0, 0, 0, 0.54);
         margin: 0 0 24px;
@@ -293,16 +279,53 @@ header {
   }
 }
 
-@media (max-width: 320px) {
-  // news-image
-  .news-image {
-    width: 100vw;
-    float: none;
+@media (max-width: 480px) {
+  // menu-bar
+  .menu-bar {
+    ul {
+      padding: 0 7%;
+    }
   }
 
-  // news-topics
-  .news-topics {
-    width: 50vw;
-    float: none;
+  .title {
+    span {
+      top: 170px;
+    }
+  }
+
+  // news-image
+  .news {
+    display: flex;
+    flex-direction: column;
+
+    .news-image {
+      width: 100%;
+
+      .image-container {
+        width: 100%;
+        height: auto;
+        margin: 0;
+
+        &::before {
+          @include background-color;
+          bottom: 3px;
+        }
+
+        span {
+          top: 20px;
+          left: 113px;
+        }
+      }
+    }
+    .news-topics {
+      width: 100%;
+      margin: 14px 0 70px 0;
+
+      .topics-container {
+        text-align: center;
+        margin: 5px 0 0 0;
+        width: 100%;
+      }
+    }
   }
 }
