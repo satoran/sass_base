@@ -1,0 +1,127 @@
+// header
+header {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .title {
+    background: url("background-image.png") no-repeat;
+    height: 480px;
+    background-position: center;
+    margin-bottom: 80px;
+    position: relative;
+  
+    span {
+      display: inline-block;
+      color: $sub-color;
+      font-family: Lato;
+      font-size: 64px;
+      font-weight: 100;
+      line-height: 77px;
+      letter-spacing: 0;
+      text-shadow: $shadow;
+      top: 200px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      z-index: 1;
+    }
+  
+    &::before {
+      @include background-color;
+    }
+  }
+  
+  .menu-bar {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+  
+    ul {
+      font-size: 14px;
+      font-style: light;
+      font-weight: 300;
+      padding: 0 14%;
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 19px 0 19px 0;
+  
+      li {
+        align-self: center;
+      }
+  
+      li:first-child {
+        font-size: 18px;
+        font-weight: normal;
+        margin-right: auto;
+      }
+  
+      a {
+        color: $main-color;
+        text-decoration: none;
+        padding: 0 8px 0 8px;
+      }
+    }
+    &::before {
+      background: $sub-color;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: " ";
+    }
+  }
+  
+  .slide-button {
+    position: absolute;
+    bottom: 24px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  
+    &__circle {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $sub-color;
+      opacity: 0.8;
+      margin: 0 4px;
+    }
+  }
+  
+  .slide-button__circle—-selected {
+    border: 1px solid $main-color;
+  }
+  
+  // 本当は以下のようにやりたかった
+  // .slide-button {
+  //   position: absolute;
+  //   bottom: 24px;
+  //   display: flex;
+  //   width: 100%;
+  //   justify-content: center;
+  
+  //   &__circle {
+  //     display: inline-block;
+  //     width: 8px;
+  //     height: 8px;
+  //     border-radius: 50%;
+  //     background-color: $sub-color;
+  //     opacity: 0.8;
+  //     margin: 0 4px;
+  
+  //     // ここ何故か効いてない
+  //     &--selected {
+  //       border: 1px solid $main-color;
+  //     }
+  //   }
+  // }
+  

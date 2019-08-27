@@ -1,3 +1,6 @@
+// @import "./header";
+// @import "./variable";
+
 $main-color: #000000;
 $sub-color: #ffffff;
 $shadow: 0px 0px 10px #000000;
@@ -27,6 +30,7 @@ header {
 .title {
   background: url("background-image.png") no-repeat;
   height: 480px;
+  background-size: cover;
   background-position: center;
   margin-bottom: 80px;
   position: relative;
@@ -59,6 +63,7 @@ header {
   top: 0;
   height: 60px;
   width: 100%;
+  background-color: rgba($sub-color, 0.2);
 
   ul {
     font-size: 14px;
@@ -85,16 +90,6 @@ header {
       text-decoration: none;
       padding: 0 8px 0 8px;
     }
-  }
-  &::before {
-    background: $sub-color;
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: " ";
   }
 }
 
@@ -144,6 +139,7 @@ header {
 //   }
 // }
 
+// news
 // news-image
 .news {
   overflow: hidden;
@@ -197,15 +193,25 @@ header {
       font-family: Noto Sans JP;
       font-size: 14px;
       font-weight: normal;
-      color: rgba(0, 0, 0, 0.87);
       line-height: 20px;
       padding-top: 8px;
       padding-bottom: 8px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.87);
     }
 
     &:first-child {
       border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .topic-link {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.87);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.54);
+      }
     }
   }
 }
@@ -222,15 +228,16 @@ header {
   }
 
   .archives-contents {
-    text-align: center;
-    padding: 0 7%;
+    width: 1040px;
+    max-width: 100%;
+    margin: 0 auto;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     .contents-container {
-      text-align: left;
       position: relative;
-      width: 238px;
-      display: inline-block;
-      margin: 0 12px;
+      width: calc(238 / 1040 * 100%);
 
       .image-wrap {
         margin-bottom: 8px;
@@ -249,7 +256,15 @@ header {
         font-size: 14px;
         font-weight: 600;
         margin: 0 0 8px;
+      }
+
+      .description-link {
+        text-decoration: none;
         color: rgba(0, 0, 0, 0.87);
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.54);
+        }
       }
 
       .date {
@@ -273,8 +288,18 @@ header {
     border: 1px solid $main-color;
     border-radius: 50px;
 
-    p {
-      margin: 14px auto;
+    .more-link {
+      text-decoration: none;
+
+      .more-text {
+        margin: 14px auto;
+        color: $main-color;
+      }
+
+      &:hover {
+        color: #ffffff;
+        background-color: #000000;
+      }
     }
   }
 }
