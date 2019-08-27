@@ -4,6 +4,12 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
 header {
   position: relative;
   text-align: center;
@@ -18,7 +24,7 @@ header {
   margin-bottom: 80px;
   position: relative;
 }
-.title span {
+.title .title-text {
   display: inline-block;
   color: #ffffff;
   font-family: Lato;
@@ -52,28 +58,36 @@ header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.menu-bar ul {
+.menu-bar .menu-bar-container {
+  display: flex;
+  max-width: 1040px;
+  align-items: center;
+  height: 60px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.menu-bar .menu-bar-container .menu-logo {
+  font-size: 18px;
+  font-style: normal;
+  text-decoration: none;
+  color: #000000;
+  margin: 0;
+}
+.menu-bar .menu-bar-container .menu-container {
   font-size: 14px;
-  font-style: light;
   font-weight: 300;
-  padding: 0 14%;
   display: flex;
   list-style: none;
   align-items: center;
-  margin: 19px 0 19px 0;
+  margin: 0;
 }
-.menu-bar ul li {
+.menu-bar .menu-bar-container .menu-container li {
   align-self: center;
 }
-.menu-bar ul li:first-child {
-  font-size: 18px;
-  font-weight: normal;
-  margin-right: auto;
-}
-.menu-bar ul a {
+.menu-bar .menu-bar-container .menu-container a {
   color: #000000;
   text-decoration: none;
-  padding: 0 8px 0 8px;
+  padding: 0 8px;
 }
 
 .slide-button {
@@ -97,19 +111,22 @@ header {
   border: 1px solid #000000;
 }
 
+.slide-dots {
+  list-style: none;
+}
+
 .news {
   overflow: hidden;
+  max-width: 1040px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 88px;
 }
 .news .news-image {
-  width: 50vw;
-  float: left;
+  width: calc((100% - 24px) / 2);
 }
 .news .news-image .image-container {
-  float: right;
   position: relative;
-  width: 500px;
-  height: 120px;
-  margin-right: 17px;
 }
 .news .news-image .image-container::before {
   background-color: rgba(0, 0, 0, 0.26);
@@ -120,10 +137,7 @@ header {
   left: 0;
   content: " ";
 }
-.news .news-image img {
-  width: 100%;
-}
-.news .news-image span {
+.news .news-image .news-logo {
   position: absolute;
   top: 35%;
   left: 41%;
@@ -134,16 +148,14 @@ header {
 }
 
 .news-topics {
-  width: 50vw;
-  float: right;
-  margin-bottom: 70px;
+  width: calc((100% - 24px) / 2);
 }
 .news-topics .topics-container {
-  margin: 5px 20px 0 20px;
   padding: 0;
   list-style: none;
   font-size: 16px;
-  width: 500px;
+  width: 100% s;
+  margin: 0;
 }
 .news-topics .topics-container li {
   font-family: Noto Sans JP;
@@ -192,7 +204,6 @@ header {
   margin-bottom: 8px;
   background-color: #000000;
   border-radius: 3px;
-  height: 120px;
 }
 .archives .archives-contents .contents-container .image-wrap .contents-image {
   position: relative;

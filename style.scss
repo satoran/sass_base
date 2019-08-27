@@ -20,6 +20,12 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
 // header
 header {
   position: relative;
@@ -35,7 +41,7 @@ header {
   margin-bottom: 80px;
   position: relative;
 
-  span {
+  .title-text {
     display: inline-block;
     color: $sub-color;
     font-family: Lato;
@@ -65,30 +71,39 @@ header {
   width: 100%;
   background-color: rgba($sub-color, 0.2);
 
-  ul {
-    font-size: 14px;
-    font-style: light;
-    font-weight: 300;
-    padding: 0 14%;
+  .menu-bar-container {
     display: flex;
-    list-style: none;
+    max-width: 1040px;
     align-items: center;
-    margin: 19px 0 19px 0;
+    height: 60px;
+    margin: 0 auto;
+    justify-content: space-between;
 
-    li {
-      align-self: center;
-    }
-
-    li:first-child {
+    .menu-logo {
       font-size: 18px;
-      font-weight: normal;
-      margin-right: auto;
+      font-style: normal;
+      text-decoration: none;
+      color: $main-color;
+      margin: 0;
     }
 
-    a {
-      color: $main-color;
-      text-decoration: none;
-      padding: 0 8px 0 8px;
+    .menu-container {
+      font-size: 14px;
+      font-weight: 300;
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+
+      li {
+        align-self: center;
+      }
+
+      a {
+        color: $main-color;
+        text-decoration: none;
+        padding: 0 8px;
+      }
     }
   }
 }
@@ -113,6 +128,10 @@ header {
 
 .slide-button__circle—-selected {
   border: 1px solid $main-color;
+}
+
+.slide-dots {
+  list-style: none;
 }
 
 // 本当は以下のようにやりたかった
@@ -143,28 +162,23 @@ header {
 // news-image
 .news {
   overflow: hidden;
+  max-width: 1040px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 88px;
 
   .news-image {
-    width: 50vw;
-    float: left;
+    width: calc((100% - 24px) / 2);
 
     .image-container {
-      float: right;
       position: relative;
-      width: 500px;
-      height: 120px;
-      margin-right: 17px;
 
       &::before {
         @include background-color;
       }
     }
 
-    img {
-      width: 100%;
-    }
-
-    span {
+    .news-logo {
       position: absolute;
       top: 35%;
       left: 41%;
@@ -178,16 +192,14 @@ header {
 
 // news-topics
 .news-topics {
-  width: 50vw;
-  float: right;
-  margin-bottom: 70px;
+  width: calc((100% - 24px) / 2);
 
   .topics-container {
-    margin: 5px 20px 0 20px;
     padding: 0;
     list-style: none;
     font-size: 16px;
-    width: 500px;
+    width: 100%s;
+    margin: 0;
 
     li {
       font-family: Noto Sans JP;
@@ -230,7 +242,7 @@ header {
   .archives-contents {
     width: 1040px;
     max-width: 100%;
-    margin: 0 auto;  
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -243,7 +255,6 @@ header {
         margin-bottom: 8px;
         background-color: #000000;
         border-radius: 3px;
-        height: 120px;
 
         .contents-image {
           position: relative;
