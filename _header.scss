@@ -1,127 +1,180 @@
 // header
 header {
-    position: relative;
-    text-align: center;
-    width: 100%;
-  }
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+// .title {
+//   background: url("background-image.png") no-repeat;
+//   height: 480px;
+//   background-size: cover;
+//   background-position: center;
+//   margin-bottom: 80px;
+//   position: relative;
   
-  .title {
-    background: url("background-image.png") no-repeat;
-    height: 480px;
-    background-position: center;
-    margin-bottom: 80px;
-    position: relative;
-  
-    span {
-      display: inline-block;
-      color: $sub-color;
-      font-family: Lato;
-      font-size: 64px;
-      font-weight: 100;
-      line-height: 77px;
-      letter-spacing: 0;
-      text-shadow: $shadow;
-      top: 200px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      position: absolute;
-      z-index: 1;
-    }
-  
-    &::before {
-      @include background-color;
-    }
-  }
-  
-  .menu-bar {
-    z-index: 1;
-    position: absolute;
-    top: 0;
+//   .title-text {
+//     position: absolute;
+//     display: inline-block;
+//     color: $sub-color;
+//     font-family: Lato;
+//     font-size: 64px;
+//     font-weight: 100;
+//     line-height: 77px;
+//     letter-spacing: 0;
+//     text-shadow: $shadow;
+//     top: 200px;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+//     z-index: 1;
+//   }
+
+//   &::before {
+//     @include background-color;
+//   }
+// }
+
+.menu-bar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: rgba($sub-color, 0.2);
+
+  .menu-bar-container {
+    display: flex;
+    max-width: 1040px;
+    align-items: center;
     height: 60px;
-    width: 100%;
-  
-    ul {
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-logo {
+      font-size: 18px;
+      font-style: normal;
+      text-decoration: none;
+      color: $main-color;
+      margin: 0;
+    }
+
+    .menu-container {
       font-size: 14px;
-      font-style: light;
       font-weight: 300;
-      padding: 0 14%;
       display: flex;
       list-style: none;
       align-items: center;
-      margin: 19px 0 19px 0;
-  
+      margin: 0;
+
       li {
         align-self: center;
       }
-  
-      li:first-child {
-        font-size: 18px;
-        font-weight: normal;
-        margin-right: auto;
-      }
-  
+
       a {
         color: $main-color;
         text-decoration: none;
-        padding: 0 8px 0 8px;
+        padding: 0 8px;
+
+        &:hover {
+          font-weight: bold;
+        }
       }
     }
-    &::before {
-      background: $sub-color;
-      opacity: 0.2;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: " ";
-    }
   }
-  
-  .slide-button {
+}
+
+.slider-wrapper {
+  position: relative;
+
+  .title-text {
     position: absolute;
-    bottom: 24px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
+    display: inline-block;
+    color: $sub-color;
+    font-family: Lato;
+    font-size: 64px;
+    font-weight: 100;
+    line-height: 77px;
+    letter-spacing: 0;
+    text-shadow: $shadow;
+    top: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .slider {
+    position: relative;
+    margin-bottom: 80px;
+    height: 480px;
+
+      &::after {
+        @include background-color;
+      }
   
-    &__circle {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: $sub-color;
-      opacity: 0.8;
-      margin: 0 4px;
+    .slide-dots {
+      position: absolute;
+      bottom: 24px;
+      left: calc(50% - 29px);
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      z-index: 999;
+  
+      li {
+        padding: 0 4px;
+        height: 8px;
+  
+        button {
+          text-indent: -9999px;
+          width: 8px;
+          height: 8px;
+          border-color: $sub-color;
+          border-radius: 50%;
+          background-color: $sub-color;
+          opacity: 0.8;
+          outline: none;
+          padding: 0;
+        }
+        &.slick-active {
+          button::before {
+            border: 1px solid $main-color;
+          }
+        }
+      }
     }
   }
-  
-  .slide-button__circle—-selected {
-    border: 1px solid $main-color;
-  }
-  
-  // 本当は以下のようにやりたかった
-  // .slide-button {
-  //   position: absolute;
-  //   bottom: 24px;
-  //   display: flex;
-  //   width: 100%;
-  //   justify-content: center;
-  
-  //   &__circle {
-  //     display: inline-block;
-  //     width: 8px;
-  //     height: 8px;
-  //     border-radius: 50%;
-  //     background-color: $sub-color;
-  //     opacity: 0.8;
-  //     margin: 0 4px;
-  
-  //     // ここ何故か効いてない
-  //     &--selected {
-  //       border: 1px solid $main-color;
-  //     }
-  //   }
-  // }
-  
+}
+
+
+
+
+
+
+// 本当は以下のようにやりたかった
+// .slide-button {
+//   position: absolute;
+//   bottom: 24px;
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+
+//   &__circle {
+//     display: inline-block;
+//     width: 8px;
+//     height: 8px;
+//     border-radius: 50%;
+//     background-color: $sub-color;
+//     opacity: 0.8;
+//     margin: 0 4px;
+
+//     // ここ何故か効いてない
+//     &--selected {
+//       border: 1px solid $main-color;
+//     }
+//   }
+// }

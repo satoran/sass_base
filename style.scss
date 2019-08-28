@@ -1,19 +1,7 @@
-// @import "./header";
-// @import "./variable";
-
-$main-color: #000000;
-$sub-color: #ffffff;
-$shadow: 0px 0px 10px #000000;
-
-@mixin background-color {
-  background-color: rgba(0, 0, 0, 0.26);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: " ";
-}
+@import "./_variable";
+@import "./_header";
+@import "./news";
+@import "./_archives";
 
 body {
   margin: 0;
@@ -26,292 +14,37 @@ img {
   vertical-align: top;
 }
 
-// header
-header {
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-
-.title {
-  background: url("background-image.png") no-repeat;
-  height: 480px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 80px;
-  position: relative;
-
-  .title-text {
-    display: inline-block;
-    color: $sub-color;
-    font-family: Lato;
-    font-size: 64px;
-    font-weight: 100;
-    line-height: 77px;
-    letter-spacing: 0;
-    text-shadow: $shadow;
-    top: 200px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &::before {
-    @include background-color;
-  }
-}
-
-.menu-bar {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  height: 60px;
-  width: 100%;
-  background-color: rgba($sub-color, 0.2);
-
-  .menu-bar-container {
-    display: flex;
-    max-width: 1040px;
-    align-items: center;
-    height: 60px;
-    margin: 0 auto;
-    justify-content: space-between;
-
-    .menu-logo {
-      font-size: 18px;
-      font-style: normal;
-      text-decoration: none;
-      color: $main-color;
-      margin: 0;
-    }
-
-    .menu-container {
-      font-size: 14px;
-      font-weight: 300;
-      display: flex;
-      list-style: none;
-      align-items: center;
-      margin: 0;
-
-      li {
-        align-self: center;
-      }
-
-      a {
-        color: $main-color;
-        text-decoration: none;
-        padding: 0 8px;
-      }
-    }
-  }
-}
-
-.slide-button {
-  position: absolute;
-  bottom: 24px;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-
-  &__circle {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: $sub-color;
-    opacity: 0.8;
-    margin: 0 4px;
-  }
-}
-
-.slide-button__circle—-selected {
-  border: 1px solid $main-color;
-}
-
-.slide-dots {
-  list-style: none;
-}
-
-// 本当は以下のようにやりたかった
-// .slide-button {
-//   position: absolute;
-//   bottom: 24px;
-//   display: flex;
-//   width: 100%;
-//   justify-content: center;
-
-//   &__circle {
-//     display: inline-block;
-//     width: 8px;
-//     height: 8px;
-//     border-radius: 50%;
-//     background-color: $sub-color;
-//     opacity: 0.8;
-//     margin: 0 4px;
-
-//     // ここ何故か効いてない
-//     &--selected {
-//       border: 1px solid $main-color;
-//     }
-//   }
-// }
-
-// news
-// news-image
-.news {
-  overflow: hidden;
-  max-width: 1040px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 88px;
-
-  .news-image {
-    width: calc((100% - 24px) / 2);
-
-    .image-container {
-      position: relative;
-
-      &::before {
-        @include background-color;
-      }
-    }
-
-    .news-logo {
-      position: absolute;
-      top: 35%;
-      left: 41%;
-      color: $sub-color;
-      font-size: 32px;
-      font-weight: 300;
-      text-shadow: $shadow;
-    }
-  }
-}
-
-// news-topics
-.news-topics {
-  width: calc((100% - 24px) / 2);
-
-  .topics-container {
-    padding: 0;
-    list-style: none;
-    font-size: 16px;
-    width: 100%s;
-    margin: 0;
-
-    li {
-      font-family: Noto Sans JP;
-      font-size: 14px;
-      font-weight: normal;
-      line-height: 20px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.87);
-    }
-
-    &:first-child {
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
-    }
-
-    .topic-link {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.87);
-
-      &:hover {
-        color: rgba(0, 0, 0, 0.54);
-      }
-    }
-  }
-}
-
-// archives
-.archives {
-  margin: 0;
-
-  .archives-title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 50px;
-  }
-
-  .archives-contents {
-    width: 1040px;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .contents-container {
-      position: relative;
-      width: calc(238 / 1040 * 100%);
-
-      .image-wrap {
-        margin-bottom: 8px;
-        background-color: #000000;
-        border-radius: 3px;
-
-        .contents-image {
-          position: relative;
-          border-radius: 3px;
-          opacity: 0.74;
-        }
-      }
-
-      .description {
-        font-size: 14px;
-        font-weight: 600;
-        margin: 0 0 8px;
-      }
-
-      .description-link {
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.87);
-
-        &:hover {
-          color: rgba(0, 0, 0, 0.54);
-        }
-      }
-
-      .date {
-        text-align: right;
-        font-size: 10px;
-        font-weight: normal;
-        color: rgba(0, 0, 0, 0.54);
-        margin: 0 0 24px;
-      }
-    }
-  }
-}
-
 // more
 .button {
   text-align: center;
+  display: flex;
+  justify-content: center;
 
   .more-button {
-    margin: 24px auto 100px;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 100px;
     width: 300px;
+    height: 43px;
+    line-height: 43px;
     border: 1px solid $main-color;
     border-radius: 50px;
 
-    .more-link {
-      text-decoration: none;
-
-      .more-text {
-        margin: 14px auto;
-        color: $main-color;
-      }
-
-      &:hover {
-        color: #ffffff;
-        background-color: #000000;
-      }
+    &:hover {
+      color: $sub-color;
+      background-color: $main-color; 
     }
+  }
+  .more-link {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;  
+    color: $main-color;
   }
 }
 

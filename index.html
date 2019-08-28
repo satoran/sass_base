@@ -28,16 +28,27 @@
         </ul>
       </div>
     </div>
-    <div class="title">
-      <h1 class="title-text">Site Practice</h1>
+    <div class="slider-wrapper">
+      <div class="title">
+        <h1 class="title-text">Site Practice</h1>
+      </div>
+      <div class="slider">
+        <div class="slider_image"
+          style="background: url('background-image.png'); height: 480px; background-size: cover; background-position: center;">
+        </div>
+        <div class="slider_image"
+          style="background: url('background-image.png'); height: 480px; background-size: cover; background-position: center;">
+        </div>
+        <div class="slider_image"
+          style="background: url('background-image.png'); height: 480px; background-size: cover; background-position: center;">
+        </div>
+        <div class="slider_image"
+          style="background: url('background-image.png'); height: 480px; background-size: cover; background-position: center;">
+        </div>
+      </div>
     </div>
     <!-- slider -->
-    <div class="slider">
-      <div><img src="background-image.png" alt="background-image"></div>
-      <div><img src="background-image.png" alt="background-image"></div>
-      <div><img src="background-image.png" alt="background-image"></div>
-      <div><img src="background-image.png" alt="background-image"></div>
-    </div>
+
 
 
     <div class="slide-button">
@@ -74,8 +85,9 @@
         <div class="image-wrap">
           <img src="contents-image.png" class="contents-image" alt="contents-image">
         </div>
-        <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
+        <p class="description">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-2">
         <div class="image-wrap">
@@ -83,6 +95,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-3">
         <div class="image-wrap">
@@ -90,6 +103,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-4">
         <div class="image-wrap">
@@ -97,6 +111,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-5">
         <div class="image-wrap">
@@ -104,6 +119,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-6">
         <div class="image-wrap">
@@ -111,6 +127,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-7">
         <div class="image-wrap">
@@ -118,6 +135,7 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
       <div class="contents-container content-8">
         <div class="image-wrap">
@@ -125,31 +143,29 @@
         </div>
         <p class="description"><a href="#" class="description-link">ブロックチェーンはシェアリングエコノミーを発展させる一助となるか？</a></p>
         <p class="date">2019.08.16</p>
+        <a href="#" class="archives-link"></a>
       </div>
     </div>
   </section>
   <section class="button">
     <div class="more-button">
-      <a href="#" class="more-link">
-        <p class="more-text">MORE</p>
-      </a>
+      <a href="#" class="more-link">MORE</a>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
   <script>
-    $(function() {
+    $(function () {
       $('.slider').slick({
         accessibility: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: false,
         speed: 1000,
-        arrows: true,
+        arrows: false,
         dots: true,
         pauseOnHover: false,
         pauseOnDotsHover: false,
-        dotsClass: 'slide-dots'
+        dotsClass: 'slide-dots',
       });
     });
 
