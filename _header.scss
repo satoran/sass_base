@@ -5,36 +5,6 @@ header {
   width: 100%;
 }
 
-// .title {
-//   background: url("background-image.png") no-repeat;
-//   height: 480px;
-//   background-size: cover;
-//   background-position: center;
-//   margin-bottom: 80px;
-//   position: relative;
-  
-//   .title-text {
-//     position: absolute;
-//     display: inline-block;
-//     color: $sub-color;
-//     font-family: Lato;
-//     font-size: 64px;
-//     font-weight: 100;
-//     line-height: 77px;
-//     letter-spacing: 0;
-//     text-shadow: $shadow;
-//     top: 200px;
-//     left: 0;
-//     right: 0;
-//     margin: auto;
-//     z-index: 1;
-//   }
-
-//   &::before {
-//     @include background-color;
-//   }
-// }
-
 .menu-bar {
   z-index: 1;
   position: fixed;
@@ -45,10 +15,11 @@ header {
 
   .menu-bar-container {
     display: flex;
-    max-width: 1040px;
+    max-width: $max-width;
+    padding: $padding;
+    margin: $margin;
     align-items: center;
     height: 60px;
-    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
 
@@ -73,12 +44,13 @@ header {
       }
 
       a {
+        background: none;
         color: $main-color;
         text-decoration: none;
         padding: 0 8px;
 
         &:hover {
-          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }
@@ -110,50 +82,49 @@ header {
     margin-bottom: 80px;
     height: 480px;
 
-      &::after {
-        @include background-color;
-      }
-  
+    &::after {
+      @include background-color;
+    }
+
     .slide-dots {
       position: absolute;
       bottom: 24px;
-      left: calc(50% - 29px);
+      left: calc(50% - 32px);
       list-style: none;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0;
+      margin: 0;
       z-index: 999;
-  
+
       li {
         padding: 0 4px;
-        height: 8px;
-  
+        display: block;
+
         button {
           text-indent: -9999px;
           width: 8px;
           height: 8px;
-          border-color: $sub-color;
+          border: none; 
           border-radius: 50%;
           background-color: $sub-color;
           opacity: 0.8;
           outline: none;
           padding: 0;
         }
+
         &.slick-active {
-          button::before {
-            border: 1px solid $main-color;
+          button {
+            width: 9px;
+            height: 9px;
+            box-shadow: 0 0 0 1px $main-color;
           }
         }
       }
     }
   }
 }
-
-
-
-
-
 
 // 本当は以下のようにやりたかった
 // .slide-button {

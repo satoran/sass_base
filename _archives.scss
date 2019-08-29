@@ -10,9 +10,9 @@
     }
   
     .archives-contents {
-      width: 1040px;
-      max-width: 100%;
-      margin: 0 auto;
+      max-width: $max-width;
+      padding: $padding;
+      margin: $margin;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;

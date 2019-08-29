@@ -1,0 +1,51 @@
+@media (max-width: 480px) {
+    // menu-bar
+    .menu-bar {
+      ul {
+        padding: 0 7%;
+      }
+    }
+  
+    .title {
+      span {
+        top: 170px;
+      }
+    }
+  
+    // news-image
+    .news {
+      display: flex;
+      flex-direction: column;
+  
+      .news-image {
+        width: 100%;
+  
+        .image-container {
+          width: 100%;
+          height: auto;
+          margin: 0;
+  
+          &::before {
+            @include background-color;
+            bottom: 3px;
+          }
+  
+          span {
+            top: 20px;
+            left: 113px;
+          }
+        }
+      }
+      .news-topics {
+        width: 100%;
+        margin: 14px 0 70px 0;
+  
+        .topics-container {
+          text-align: center;
+          margin: 5px 0 0 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  

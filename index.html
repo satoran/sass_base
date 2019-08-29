@@ -28,6 +28,7 @@
         </ul>
       </div>
     </div>
+    <!-- slider -->
     <div class="slider-wrapper">
       <div class="title">
         <h1 class="title-text">Site Practice</h1>
@@ -47,16 +48,6 @@
         </div>
       </div>
     </div>
-    <!-- slider -->
-
-
-
-    <div class="slide-button">
-      <div class="slide-button__circle slide-button__circle—-selected"></div>
-      <div class="slide-button__circle"></div>
-      <div class="slide-button__circle"></div>
-      <div class="slide-button__circle"></div>
-    </div>
   </header>
   <!-- news -->
   <section class="news">
@@ -68,9 +59,18 @@
     </div>
     <div class="news-topics">
       <ul class="topics-container">
-        <li><a href="#" class="topic-link">台風けが人相次ぐ　看板落下も</a></li>
-        <li><a href="#" class="topic-link">露 日露交渉行き詰まってない</a></li>
-        <li><a href="#" class="topic-link">春菜 エルトンまねに自画自賛</a></li>
+        <div class="topic-index">
+          <li>台風けが人相次ぐ　看板落下も</li>
+          <a href="#" class="topic-link"></a>
+        </div>
+        <div class="topic-index">
+          <li>露 日露交渉行き詰まってない</li>
+          <a href="#" class="topic-link"></a>
+        </div>
+        <div class="topic-index">
+          <li>春菜 エルトンまねに自画自賛</li>
+          <a href="#" class="topic-link"></a>
+        </div>
       </ul>
     </div>
   </section>
@@ -162,20 +162,16 @@
         autoplay: false,
         speed: 1000,
         arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         dots: true,
         pauseOnHover: false,
         pauseOnDotsHover: false,
         dotsClass: 'slide-dots',
+        swipe: true,
+        draggable: true,
       });
     });
-
-        // accessibility: true,
-        // arrows: true,
-        // infinite: true,
-        // initialSlide: 0,
-        // slidesToScroll: 1,
-        // swipe: true,
-
   </script>
 
   <!-- ここは編集しない -->

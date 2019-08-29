@@ -1,6 +1,9 @@
 $main-color: #000000;
 $sub-color: #ffffff;
 $shadow: 0px 0px 10px #000000;
+$max-width: 1024px;
+$padding: 0 40px;
+$margin: 0 auto;
 
 @mixin background-color {
   position: absolute;
