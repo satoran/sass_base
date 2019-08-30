@@ -85,7 +85,10 @@ header {
   margin-bottom: 80px;
   height: 480px;
 }
-.slider-wrapper .slider::after {
+.slider-wrapper .slider .slider-container {
+  position: relative;
+}
+.slider-wrapper .slider .slider-container::after {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.26);
   top: 0;

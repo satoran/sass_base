@@ -82,8 +82,11 @@ header {
     margin-bottom: 80px;
     height: 480px;
 
-    &::after {
-      @include background-color;
+    .slider-container {
+      position: relative;
+      &::after {
+        @include background-color;
+      }
     }
 
     .slide-dots {
@@ -106,7 +109,7 @@ header {
           text-indent: -9999px;
           width: 8px;
           height: 8px;
-          border: none; 
+          border: none;
           border-radius: 50%;
           background-color: $sub-color;
           opacity: 0.8;
