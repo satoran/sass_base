@@ -16,10 +16,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media (max-width: 480px) {
+        max-width: initial;
+        padding: 0 4.4%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+      }
   
       .contents-container {
         position: relative;
         width: calc(238 / 1040 * 100%);
+        @media (max-width: 480px) {
+          width: auto;
+        }
   
         .image-wrap {
           margin-bottom: 8px;

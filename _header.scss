@@ -22,6 +22,10 @@ header {
     height: 60px;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 480px) {
+      padding: 0 4.4%;
+      justify-content: center;
+    }
 
     .menu-logo {
       font-size: 18px;
@@ -38,6 +42,9 @@ header {
       list-style: none;
       align-items: center;
       margin: 0;
+      @media (max-width: 480px){
+        display: none;
+      }
 
       li {
         align-self: center;
@@ -75,6 +82,9 @@ header {
     right: 0;
     margin: auto;
     z-index: 1;
+    @media (max-width: 480px) {
+      top: 170px;
+    }
   }
 
   .slider {
@@ -128,6 +138,10 @@ header {
     }
   }
 }
+
+
+
+
 
 // 本当は以下のようにやりたかった
 // .slide-button {
