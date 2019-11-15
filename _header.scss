@@ -140,29 +140,3 @@ header {
 }
 
 
-
-
-
-// 本当は以下のようにやりたかった
-// .slide-button {
-//   position: absolute;
-//   bottom: 24px;
-//   display: flex;
-//   width: 100%;
-//   justify-content: center;
-
-//   &__circle {
-//     display: inline-block;
-//     width: 8px;
-//     height: 8px;
-//     border-radius: 50%;
-//     background-color: $sub-color;
-//     opacity: 0.8;
-//     margin: 0 4px;
-
-//     // ここ何故か効いてない
-//     &--selected {
-//       border: 1px solid $main-color;
-//     }
-//   }
-// }
